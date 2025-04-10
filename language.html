@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Language Selection</title>
+    <link rel="stylesheet" href="/Users/suchikamishra/Desktop/Projects/Devcation 25/static/language.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Select Your Language</h1>
+            <h1 class="hindi">अपनी भाषा चुनें</h1>
+        </div>
+        
+        <div class="language-grid">
+            <!-- Row 1 -->
+            <button class="language-btn" onclick="selectLanguage(this, 'hindi')">
+                <span class="language-name">हिन्दी</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'bengali')">
+                <span class="language-name">বাংলা</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'telugu')">
+                <span class="language-name">తెలుగు</span>
+            </button>
+            
+            <!-- Row 2 -->
+            <button class="language-btn" onclick="selectLanguage(this, 'marathi')">
+                <span class="language-name">मराठी</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'tamil')">
+                <span class="language-name">தமிழ்</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'urdu')">
+                <span class="language-name">اردو</span>
+            </button>
+            
+            <!-- Row 3 -->
+            <button class="language-btn" onclick="selectLanguage(this, 'gujarati')">
+                <span class="language-name">ગુજરાતી</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'kannada')">
+                <span class="language-name">ಕನ್ನಡ</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'punjabi')">
+                <span class="language-name">ਪੰਜਾਬੀ</span>
+            </button>
+            
+            <!-- Row 4 -->
+            <button class="language-btn" onclick="selectLanguage(this, 'malayalam')">
+                <span class="language-name">മലയാളം</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'odia')">
+                <span class="language-name">ଓଡ଼ିଆ</span>
+            </button>
+            <button class="language-btn" onclick="selectLanguage(this, 'english')">
+                <span class="language-name">English</span>
+            </button>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Language Selection</p>
+        </div>
+    </div>
+    
+    <script>
+        function selectLanguage(button, lang) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                // Remove any existing checkmarks
+                const existingMark = btn.querySelector('.checkmark');
+                if (existingMark) existingMark.remove();
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Log selection
+            console.log('Selected language:', lang);
+            
+            // Show temporary checkmark
+            const checkmark = document.createElement('span');
+            checkmark.className = 'checkmark';
+            checkmark.textContent = '✓';
+            button.appendChild(checkmark);
+            
+            // Here you would typically redirect or save the language selection
+            // For demo purposes, we'll just show the selection
+            setTimeout(() => {
+                checkmark.remove();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Lok - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/dashboard.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav" aria-label="Main navigation">
+        <div class="top-nav-left">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                <span>Legal Lok</span>
+            </div>
+        </div>
+        
+        <div class="top-nav-right">
+            <div class="user-profile">
+                <div class="user-avatar" tabindex="0">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="user-name">John Doe</div>
+                <div class="profile-dropdown">
+                    <a href="/profile">My Profile</a>
+                    <a href="/settings">Settings</a>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+    <div class="content-area">
+        <!-- Side Navigation -->
+        <div class="sidebar">
+            <div class="sidebar-item active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-robot"></i>
+                <span>Legal Chatbot</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-file-alt"></i>
+                <a href="/yourforms">
+                <span>Forms</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-users"></i>
+                <span>Community Forum</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-gavel"></i>
+                <span>Petitions</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+                <span class="badge">3</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="visually-hidden">Legal Lok Dashboard</h1>
+            
+            <!-- Welcome Section -->
+            <section class="welcome-section" aria-labelledby="welcome-heading">
+                <h2 id="welcome-heading">Welcome, John Doe!</h2>
+                <p class="welcome-message">Here's what's happening with your legal matters today.</p>
+            </section>
+            
+            <!-- Quick Actions -->
+            <section class="quick-actions" aria-labelledby="quick-actions-heading">
+                <h2 id="quick-actions-heading"><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="action-grid">
+                    <button class="action-btn">
+                        <i class="fas fa-file-contract"></i>
+                        <span>New Document</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ask a Lawyer</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-search"></i>
+                        <span>Case Search</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Schedule</span>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Profile Card -->
+            <section class="profile-card" aria-labelledby="profile-heading">
+                <div class="profile-header">
+                    <div class="profile-pic">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profile-heading">John Doe</h2>
+                        <p>Member since June 2023</p>
+                        <div class="profile-status">
+                            <span class="status-indicator active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn" aria-label="Edit profile">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+                
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <h3>Full Name</h3>
+                        <p>John Michael Doe</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h3>Mobile Number</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h3>Email Address</h3>
+                        <p>john.doe@example.com</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h3>User ID</h3>
+                        <p>LL-2023-5874</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Notifications Section -->
+            <section class="notifications" aria-labelledby="notifications-heading">
+                <div class="notifications-header">
+                    <h2 id="notifications-heading"><i class="fas fa-bell"></i> Recent Activities</h2>
+                    <div class="notification-actions">
+                        <button class="mark-as-read">Mark all as read</button>
+                        <button class="view-all">View all</button>
+                    </div>
+                </div>
+                
+                <div class="notification-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h3>New Petition Filed</h3>
+                            <p>Your petition regarding property dispute has been successfully submitted.</p>
+                            <div class="notification-time">2 hours ago</div>
+                        </div>
+                        <button class="notification-dismiss" aria-label="Dismiss notification">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Other notification items -->
+                </div>
+            </section>
+            
+            <!-- Popular Articles Section -->
+            <section class="popular-articles" aria-labelledby="articles-heading">
+                <h2 id="articles-heading"><i class="fas fa-newspaper"></i> Popular Legal News</h2>
+                <div id="articles-container" class="articles-grid" aria-live="polite">
+                    <div class="loading-articles">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                            <span class="sr-only">Loading articles...</span>
+                        </div>
+                        <p>Fetching the latest legal news for you</p>
+                    </div>
+                </div>
+                <button id="load-more" class="load-more" style="display: none;">Load More Articles</button>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Profile dropdown toggle
+        document.querySelector('.user-avatar')?.addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelector('.user-profile').classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelector('.user-profile')?.classList.remove('active');
+        });
+
+        // Enhanced sidebar functionality
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.querySelector('a') && !e.target.closest('a')) {
+                    e.preventDefault();
+                }
+                
+                document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            if(confirm('Are you sure you want to logout?')) {
+                // In a real app, this would redirect to logout endpoint
+                fetch('/logout', {
+                    method: 'POST',
+                    credentials: 'same-origin'
+                })
+                .then(response => {
+                    if(response.ok) {
+                        window.location.href = '/login';
+                    }
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                    window.location.href = '/login';
+                });
+            }
+        });
+
+        // Notification dismiss
+        document.querySelectorAll('.notification-dismiss').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.notification-item').remove();
+            });
+        });
+    </script>
+    <script src="static/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Registration | Legal Nayak</title>
+    <link rel="stylesheet" href="/Users/suchikamishra/Desktop/Projects/Devcation 25/static/lawyer login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo"></div>
+            <span class="brand-name">Legal Lok</span>
+        </div>
+    </header>
+    
+    <div class="registration-container">
+        <div class="registration-header">
+            <h1>Lawyer Registration</h1>
+            <p>Join our network of legal professionals and expand your practice</p>
+        </div>
+        
+        <form class="registration-form">
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            
+            <!-- Professional Information -->
+            <div class="form-group full-width">
+                <label for="barNumber">Bar Council Number</label>
+                <input type="text" id="barNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="practiceYears">Years of Practice</label>
+                <select id="practiceYears" required>
+                    <option value="">Select</option>
+                    <option value="0-2">0-2 years</option>
+                    <option value="3-5">3-5 years</option>
+                    <option value="6-10">6-10 years</option>
+                    <option value="10+">10+ years</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="specialization">Primary Specialization</label>
+                <select id="specialization" required>
+                    <option value="">Select</option>
+                    <option value="corporate">Corporate Law</option>
+                    <option value="criminal">Criminal Law</option>
+                    <option value="family">Family Law</option>
+                    <option value="property">Property Law</option>
+                    <option value="civil">Civil Litigation</option>
+                    <option value="tax">Tax Law</option>
+                    <option value="ip">Intellectual Property</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <!-- Address Information -->
+            <div class="form-group full-width">
+                <label for="address">Office Address</label>
+                <textarea id="address" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" required>
+            </div>
+            
+            <!-- Document Uploads -->
+            <div class="form-group full-width">
+                <label>Upload Documents</label>
+                <div class="form-row">
+                    <div class="form-group file-upload">
+                        <label class="file-upload-label" for="barCertificate">Bar Council Certificate</label>
+                        <input type="file" id="barCertificate" accept=".pdf,.jpg,.png" required>
+                    </div>
+                    
+                    <div class="form-group file-upload">
+                        <label class="file-upload-label" for="idProof">ID Proof (Aadhar/PAN)</label>
+                        <input type="file" id="idProof" accept=".pdf,.jpg,.png" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Terms and Conditions -->
+            <div class="terms-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Complete Registration</button>
+        </form>
+    </div>
+    
+    <script>
+        // Form validation and submission
+        document.querySelector('.registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate passwords match
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Validate terms checkbox
+            if (!document.getElementById('terms').checked) {
+                alert('Please agree to the Terms of Service and Privacy Policy');
+                return;
+            }
+            
+            // If validation passes (in a real app, you would send to server here)
+            alert('Registration submitted successfully! We will review your application and contact you shortly.');
+            this.reset();
+        });
+        
+        // Update file upload labels to show selected file names
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const label = this.previousElementSibling;
+                if (this.files.length > 0) {
+                    label.textContent = this.files[0].name;
+                    label.style.borderStyle = 'solid';
+                    label.style.backgroundColor = '#ede7d6';
+                } else {
+                    label.textContent = label.getAttribute('data-original-text') || 'Choose file';
+                    label.style.borderStyle = 'dashed';
+                    label.style.backgroundColor = '#f8f4e9';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
